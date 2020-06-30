@@ -36,6 +36,7 @@ public class UserController {
         return "redirect:/stu/getAllUser";
     }
 
+
     @RequestMapping(value = "/stu/update",method = RequestMethod.GET)
     public String update(Model model){
         List<User> list = userService.getAllUser();

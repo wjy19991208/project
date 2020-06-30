@@ -20,7 +20,7 @@
          </thead>
          <!-- 动态插入内容 -->
          <tbody>
-             <tr th:each="s,iterStat : ${students}" th:class="${iterStat.odd}? 'odd'">
+             <tr th:each="s,iterStat : ${user}" th:class="${iterStat.odd}? 'odd'">
                      <td th:text=" ${s.getId()}"></td>
                  　　<td th:text=" ${s.getNo()}"></td>
                  　　<td th:text=" ${s.getName()}"></td>

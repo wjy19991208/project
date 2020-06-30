@@ -30,4 +30,5 @@ public interface UserDAO {
     @Delete(value = "DELETE FROM User WHERE uid= #{uid}")
     int deleteUser(Integer uid);
 
+
 }
