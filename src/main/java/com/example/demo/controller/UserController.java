@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.Student;
-import com.example.demo.service.StudentService;
+import com.example.demo.entity.User;
+import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,34 +18,34 @@ import java.util.List;
 * @create 2018-07-01 
 **/
 @Controller
-public class StudentController {
+public class UserController {
 
     @Autowired
-    private StudentService studentService;
+    private UserService userService;
 
-    @RequestMapping(value = "/stu/getAllStudent",method = RequestMethod.GET)
-    public String getAllStudent(HttpServletRequest request){
-        List<Student> list = studentService.getAllStudent();
-        request.setAttribute("students",list);
-        return "student";
+    @RequestMapping(value = "/stu/getAllUser",method = RequestMethod.GET)
+    public String getAllUser(HttpServletRequest request){
+        List<User> list = userService.getAllUser();
+        request.setAttribute("user",list);
+        return "user";
     }
 
     @RequestMapping(value = "/stu/insert",method = RequestMethod.GET)
-    public String insert(@ModelAttribute("student") Student student,Model model){
-        studentService.insert(student);
-        return "redirect:/stu/getAllStudent";
+    public String insert(@ModelAttribute("user") User user,Model model){
+        userService.insert(user);
+        return "redirect:/stu/getAllUser";
     }
 
     @RequestMapping(value = "/stu/update",method = RequestMethod.GET)
     public String update(Model model){
-        List<Student> list = studentService.getAllStudent();
+        List<User> list = userService.getAllUser();
 //        request.setAttribute("students",list);
-        return "student";
+        return "user";
     }
 
     @RequestMapping(value = "/stu/index",method = RequestMethod.GET)
-    public String indexStu(Model model){
-        model.addAttribute("student",new Student());
+    public String indexUsr(Model model){
+        model.addAttribute("user",new User());
         return "insert";
     }
 

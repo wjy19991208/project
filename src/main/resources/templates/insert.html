@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1 th:inline="text">Insert</h1>
-    <form id="iform" th:action="@{/stu/insert}" th:method="get" th:object="${student}">
+    <form id="iform" th:action="@{/stu/insert}" th:method="get" th:object="${user}">
 		<label>姓名</label>
 		<input type="text" th:field="*{name}"/>
 		<label>员工号</label>
