@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-import org.hibernate.validator.constraints.ISBN;
+
 
 import java.util.List;
 
@@ -18,6 +18,12 @@ public interface MemberDAO {
     @Insert(value = "INSERT INTO Member(Member.'mid',Member.'name',Member.'phone',Member.'score')\n" +
                 "VALUE(#{mid},#{name},#{phone},#{score})")
     int insert(Member member);
+
+    @Update(value = "UPDATE Member SET Member.score =  #{score} WHERE Member.mid = #{mid}")
+    int updateScore(Integer mid, Integer score);
+
+    @Delete(value = "DELETE FROM Member WHERE mid = #{mid}")
+    int deleteMemb(Integer mid);
 
 
 
