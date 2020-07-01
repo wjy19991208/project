@@ -20,7 +20,7 @@ public interface UserDAO {
     @Select(value = "SELECT * FROM User")
     List<User> getAllUser();
 
-    @Insert(value = "INSERT INTO User(User.`uid`,User.`name`,User.identity,User.'salary')\n" +
+    @Insert(value = "INSERT INTO User(user.`uid`,user.`name`,user.identity,user.'salary')\n" +
             "VALUE(#{uid},#{name},#{identity},#{salary})")
     int insert(User user);
 

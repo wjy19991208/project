@@ -20,20 +20,19 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 --  Table structure for `student.html`
 -- ----------------------------
-DROP TABLE IF EXISTS `student`;
-CREATE TABLE `student` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `no` varchar(100) CHARACTER SET utf8 DEFAULT '120812' COMMENT '学号',
-  `name` varchar(100) CHARACTER SET utf8 DEFAULT 'Tom' COMMENT '姓名',
-  `score` double(10,2) DEFAULT '0.00' COMMENT '分数',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='学生表';
+DROP TABLE IF EXISTS `Login`;
+CREATE TABLE `Login` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `passwd` varchar(100) CHARACTER SET utf8  COMMENT '密码',
+
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='登陆';
 
 -- ----------------------------
 --  Records of `student.html`
 -- ----------------------------
 BEGIN;
-INSERT INTO `student` VALUES ('1', 'S201625001', '张三', '85.60'), ('2', 'S201625002', '李四', '90.45');
+INSERT INTO `Login` VALUES ('18080123', '123456'), ('21233','123456');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
