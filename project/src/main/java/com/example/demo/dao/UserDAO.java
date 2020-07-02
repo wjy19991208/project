@@ -20,10 +20,6 @@ public interface UserDAO {
     @Select(value = "SELECT * FROM User")
     List<User> getAllUser();
 
-    //查询User表中是否员工名字为name
-    @Select(value = "SELECT COUNT(name) FROM (SELECT name FROM User WHERE name = #{name} ) as a")
-    int selectName(String name);
-
     @Insert(value = "INSERT INTO User(user.`uid`,user.`name`,user.identity,user.'salary')\n" +
             "VALUE(#{uid},#{name},#{identity},#{salary})")
     int insert(User user);

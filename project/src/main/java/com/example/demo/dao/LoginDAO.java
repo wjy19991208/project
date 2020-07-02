@@ -13,14 +13,12 @@ import java.util.List;
 
 @Mapper
 public interface LoginDAO {
-
-    @Insert(value = "INSERT INTO Login VALUE(#{login.uid},#{login.passwd},#{login.identity}")
+    @Insert(value = "INSERT INTO Login VALUE(#{login.uid),#(login.passwd)")
     int insert(Login login);
 
     @Select(value = "SELECT * FROM Login")
     List<Login>  getAllLogin();
 
-    //查找是否能在数据库中找到 该Uid ，找到返回1，未找到返回0
     @Select(value = "SELECT COUNT(uid) FROM(SELECT uid FROM Login WHERE Login.uid = #{uid} ) as a " )
     int findLogin(int uid);
 
