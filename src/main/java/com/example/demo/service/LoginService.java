@@ -9,6 +9,6 @@ public interface LoginService {
 
      boolean checkExistUid(int uid);
 
-     boolean checkPasswd(int uid, String passwd);
+     boolean checkPasswd(int uid, String passwd, int identity);
 
 }

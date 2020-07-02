@@ -7,6 +7,7 @@ import lombok.Data;
 public class Login {
     private Integer uid;
     private String passwd;
+    private int identity;
 
 
     public void setUid(Integer uid) {
@@ -24,4 +25,13 @@ public class Login {
     public String getPasswd() {
         return passwd;
     }
+
+    public int getIdentity() {
+        return identity;
+    }
+
+    public void setIdentity(int identity) {
+        this.identity = identity;
+    }
 }
+

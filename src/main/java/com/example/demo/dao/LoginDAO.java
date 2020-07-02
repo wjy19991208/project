@@ -2,7 +2,7 @@ package com.example.demo.dao;
 
 
 import com.example.demo.entity.Login;
-import com.example.demo.entity.User;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -11,6 +11,7 @@ import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
+@Mapper
 public interface LoginDAO {
     @Insert(value = "INSERT INTO Login VALUE(#{login.uid),#(login.passwd)")
     int insert(Login login);
@@ -18,9 +19,9 @@ public interface LoginDAO {
     @Select(value = "SELECT * FROM Login")
     List<Login>  getAllLogin();
 
-    @Select(value = "SELECT uid FROM Login WHERE Login.uid = #{uid}" )
-    boolean findLogin(int uid);
+    @Select(value = "SELECT COUNT(uid) FROM(SELECT uid FROM Login WHERE Login.uid = #{uid} ) as a " )
+    int findLogin(int uid);
 
-    @Select(value = "SELECT passwd FROM Login WHERE Login.uid = #{uid} AND Login.passwd = #{passwd}")
-    boolean checkPasswd(int uid, String passwd);
+    @Select(value = "SELECT COUNT(uid) FROM (SELECT uid FROM Login WHERE Login.uid = #{uid} AND Login.passwd = #{passwd} AND Login.identity = #{identity}) as b")
+    int checkPasswd(int uid, String passwd, int identity);
 }

@@ -12,6 +12,7 @@ import java.util.List;
 
 @Controller
 public class LoginController {
+    @Autowired
     private LoginService loginService;
 
     @GetMapping("/login")
@@ -21,9 +22,10 @@ public class LoginController {
 
     }
 
+    //捕获login页面Post请求，与数据库核验员工Id，密码。身份
     @PostMapping("/login")
     public String loginSubmit(@ModelAttribute  Login login) {
-        if(loginService.checkExistUid( login.getUid() )  && loginService.checkPasswd(login.getUid(), login.getPasswd()) )
+        if(loginService.checkExistUid( login.getUid() )  && loginService.checkPasswd(login.getUid(), login.getPasswd(), login.getIdentity()) )
             return "loginResult";
         else
             System.out.println("Hello World");

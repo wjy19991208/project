@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class LoginServiceimpl implements LoginService{
 
-   // @Autowired
+    @Autowired
     private LoginDAO loginDAO;
 
     @Override
@@ -21,10 +21,22 @@ public class LoginServiceimpl implements LoginService{
     }
 
     @Override
-    public boolean  checkExistUid(int uid) { return loginDAO.findLogin(uid);}
+    public boolean  checkExistUid(int uid) {
+        int t = loginDAO.findLogin(uid);
+        if(t > 0)
+            return true;
+        else
+            return false;
+    }
 
     @Override
-    public boolean checkPasswd(int uid, String passwd) {return loginDAO.checkPasswd(uid, passwd);}
+    public boolean checkPasswd(int uid, String passwd,int identity) {
+        int t = loginDAO.checkPasswd(uid,passwd,identity);
+        if(t > 0)
+            return true;
+        else
+            return false;
+    }
 
 
 }
