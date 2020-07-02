@@ -1,4 +1,4 @@
-### 拉代码时，记得备份pom.xml里的mysql-connector-java版本,拉完代码，修改回去Connector版本号，并更改application.properties文件首段的mysql账号密码
+### 拉代码时，记得备份pom.xml里的mysql-connector-java版本,拉完代码，修改回去Connector版本号，并更改application.properties文件首段的mysql账号密码，然后用IDEA自带的数据库管理器运行下项目data文件夹里的sql初始化script.
 ## 说明
 
 #### 环境准备（自行百度如何配置）
