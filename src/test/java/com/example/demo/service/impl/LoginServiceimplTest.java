@@ -18,6 +18,7 @@ public class LoginServiceimplTest {
 
     @Test
     //以下测试账号在数据库中
+
     public void TestUidInDB(){
         assertEquals(true,lspl.checkExistUid(18080123));
     }
