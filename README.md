@@ -1,7 +1,5 @@
+### 拉代码时，记得备份pom.xml里的mysql-connector-java版本,拉完代码，修改回去Connector版本号，并更改application.properties文件首段的mysql账号密码
 ## 说明
-
-本工程采用Spring Boot构建项目的基本结构，并且提供了简单的查询示例。不清楚如何搭项目框架的同学可以参考本项目。
-如果自己可以搭建好项目结果，可以自行搭建。
 
 #### 环境准备（自行百度如何配置）
 1. JDK 1.8
