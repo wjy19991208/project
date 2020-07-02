@@ -26,7 +26,22 @@ public class LoginController {
     @PostMapping("/login")
     public String loginSubmit(@ModelAttribute  Login login) {
         if(loginService.checkExistUid( login.getUid() )  && loginService.checkPasswd(login.getUid(), login.getPasswd(), login.getIdentity()) )
-            return "loginResult";
+        {
+            switch (login.getIdentity())
+            {
+                case 0:
+                    return "saleSystem";                    //经理 进入销售后台管理系统
+
+                case 1:
+                    return "employeeSystem";
+                case 2:
+                    return "inventory";
+                case 3:
+                    return "cashier";
+
+            }
+
+        }
         else
             System.out.println("Hello World");
 
