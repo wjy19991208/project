@@ -1,8 +1,8 @@
 package com.example.demo.entity;
 
 
-import lombok.Data;
-@Data
+//import lombok.Data;
+
 //员工实体类 （identity (0:经理; 1:系统管理员; 2:库存管理员; 3:售货员
 public class Login {
     private Integer uid;
