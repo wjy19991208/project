@@ -14,7 +14,7 @@ import java.util.List;
 @Mapper
 public interface LoginDAO {
 
-    @Insert(value = "INSERT INTO Login VALUE(#{login.uid},#{login.passwd},#{login.identity}")
+    @Insert(value = "INSERT INTO Login VALUE(#{uid},#{passwd},#{identity})")
     int insert(Login login);
 
     @Select(value = "SELECT * FROM Login")

@@ -5,13 +5,13 @@ import com.example.demo.dao.LoginDAO;
 import com.example.demo.dao.UserDAO;
 import com.example.demo.entity.Login;
 import com.example.demo.entity.User;
-import com.example.demo.service.RegisterService;
+import com.example.demo.service.RegisterUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 @Service
-public class RegisterServiceimpl implements RegisterService{
+public class RegisterUserServiceimpl implements RegisterUserService {
     @Autowired
     LoginDAO loginDAO;
     @Autowired
@@ -29,15 +29,15 @@ public class RegisterServiceimpl implements RegisterService{
 
     @Override
     public boolean insertIntoUser(User user) {
-        if(userDAO.insert(user) == user.getUid() )
-            return true;
-        else
-            return false;
+       if(userDAO.insert(user) == 1)
+           return true;
+       else
+           return false;
     }
 
     @Override
     public boolean insertIntoLogin(Login login) {
-        if(loginDAO.insert(login) == login.getUid())
+        if(loginDAO.insert(login) == 1)
             return true;
         else
             return false;
