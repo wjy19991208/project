@@ -7,7 +7,7 @@ import lombok.Data;
 * @author Tim Lin
 * @create 2018-07-01 
 **/
-@Data
+
 //员工实体类 （identity (0:经理; 1:系统管理员; 2:库存管理员; 3:售货员
 public class User {
 

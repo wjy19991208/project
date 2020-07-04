@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册会员</title>
+</head>
+<body>
+<h1>注册会员</h1>
+<form align="center" action="#" th:action="@{/registerMember.html}" th:object="${member}" method="post">
+
+    账号:<br><input type="text" th:field = "*{uid}">
+    <br>
+    密码:<br><input type="password" th:field = "*{passwd}">
+    <br><br>
+    <select name="身份" th:field = "*{identity}">
+        <option value="0">经理</option>
+        <option value="1">系统管理员</option>
+        <option value="2">库存管理员</option>
+        <option value="3">售货员</option>
+    </select>
+    <br>
+    <input type="submit" value="Submit">
+
+</body>
+</html>

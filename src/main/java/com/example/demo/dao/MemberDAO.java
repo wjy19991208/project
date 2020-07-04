@@ -23,7 +23,7 @@ public interface MemberDAO {
     int updateScore(Integer mid, Integer score);
 
     @Delete(value = "DELETE FROM Member WHERE mid = #{mid}")
-    int deleteMemb(Integer mid);
+    int deleteMemb(Integer mid);                        //删除表中符合mid = deleteMemb函数形参的元组
 
 
 
